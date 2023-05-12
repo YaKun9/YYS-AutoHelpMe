@@ -5,8 +5,12 @@
 一款阴阳师辅助脚本GUI客户端版本，基于`.NET6`+`WinForm`+`Win32API`实现。
 
 肝又肝不动，买又不值得，那怎么办呢，自己写一个。
+
 由`.NET`+`WinForm`+`Win32API`+`DevExpress`实现的一个阴阳师脚本。包含了一些常用的功能，诸如魂土、困28等。
-DevExpress控件库可以自行替换成其他的，如果懒得搞，直接用[Release]()吧。
+
+`DevExpress`控件库可以自行替换成其他的，如果懒得搞，直接用[Release](https://github.com/YaKun9/YYS-AutoHelpMe/releases)吧。
+
+[DevExpress](https://www.devexpress.com/products/net/controls/winforms/)提供30天免费试用，可以自行下载安装。
 
 ## 功能清单&待办事项
 
