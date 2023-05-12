@@ -12,6 +12,9 @@
 
 [DevExpress](https://www.devexpress.com/products/net/controls/winforms/)提供30天免费试用，可以自行下载安装。
 
+![image](https://github.com/YaKun9/YYS-AutoHelpMe/assets/131952790/098579d4-36a9-405e-8d05-b78daf9b0743)
+
+
 ## 功能清单&待办事项
 
 - [x] 御魂单刷/司机/打手
