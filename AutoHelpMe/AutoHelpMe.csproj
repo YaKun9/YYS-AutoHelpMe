@@ -434,7 +434,4 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; (&#xD;&#xA;    if not exist &quot;$(ProjectDir)bin\build&quot; mkdir &quot;$(ProjectDir)bin\build&quot;&#xD;&#xA;    xcopy &quot;$(TargetDir)*.*&quot; &quot;$(ProjectDir)bin\build&quot; /s /y&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;" />
-  </Target>
 </Project>
