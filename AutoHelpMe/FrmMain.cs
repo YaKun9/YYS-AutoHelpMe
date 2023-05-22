@@ -89,7 +89,7 @@ namespace AutoHelpMe
                         Invoke(SetBtnPause, null, false);
                         _taskHelper?.Restore();
                         _taskHelper?.Stop();
-
+                        break;
                         if (checkBox_关闭加成.Checked && list_functions.SelectedValue.ToString() != nameof(Functions.关闭加成))
                         {
                             Invoke(执行关加成);
