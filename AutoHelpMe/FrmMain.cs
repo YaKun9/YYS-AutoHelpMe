@@ -49,6 +49,8 @@ namespace AutoHelpMe
                 new() { Text = "第二十七章", ActionName = "27" },
                 new() { Text = "第二十六章", ActionName = "26" },
                 new() { Text = "第二十五章", ActionName = "25" },
+                new() { Text = "第十一章", ActionName = "11" },
+                new() { Text = "第十章", ActionName = "10" },
             };
             list_副本章节.DisplayMember = "Text";
             list_副本章节.ValueMember = "ActionName";

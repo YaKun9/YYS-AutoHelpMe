@@ -27,7 +27,7 @@ public partial class Functions
             var rectR = new Rectangle(800, 500, 400, 100);
             var rectL = new Rectangle(200, 500, 500, 100);
             
-            var keys = new List<string>() { "副本_结界票满", "副本_确认","副本_宝箱", "副本_宝箱2", "探索",  "副本_探索", "副本_轮换", "副本_樱饼", "副本_小怪", "副本_BOSS", "准备", "失败", "失败2", "赢", "赢2", "奖励", "副本_小奖励" }.AddExt(BaseKeys);
+            var keys = new List<string>() { "副本_结界票满", "副本_确认","副本_宝箱", "副本_宝箱2", "探索",  "副本_探索", "副本_轮换", "副本_樱饼", "副本_樱饼2", "副本_小怪", "副本_BOSS", "准备", "失败", "失败2", "赢", "赢2", "奖励", "副本_小奖励" }.AddExt(BaseKeys);
             keys.Add($"副本_{chapter}");
             keys.Add(isNormal ? "副本_普通" : "副本_困难");
 
@@ -77,7 +77,7 @@ public partial class Functions
                             break;
                     }
                     lastClick = name;
-                    if (name == "副本_樱饼")
+                    if (name.StartsWith("副本_樱饼"))
                     {
                         isIn = true;
                     }
