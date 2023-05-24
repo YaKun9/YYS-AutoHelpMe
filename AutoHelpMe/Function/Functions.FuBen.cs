@@ -15,7 +15,8 @@ public partial class Functions
     /// <param name="maxCount"></param>
     /// <param name="chapter">章节</param>
     /// <param name="isNormal">是否普通,true普通,false困难</param>
-    public static void 探索副本(TaskHelper taskHelper, int maxCount,int chapter=28,bool isNormal=false)
+    /// <param name="isTuPo">是否当结界票满时进行结界突破</param>
+    public static void 探索副本(TaskHelper taskHelper, int maxCount,int chapter=28,bool isNormal=false,bool isTuPo=false)
     {
         taskHelper.Start(() =>
         {
@@ -65,7 +66,11 @@ public partial class Functions
                             break;
                         case "副本_结界票满":
                             GlobalConst.FinishReason = "副本结界票满";
-                            goto close;
+                            if (isTuPo)
+                            {
+                                goto close;
+                            }
+                            break;
                         default:
                             isIn = false;
                             move = 0;
@@ -111,6 +116,58 @@ public partial class Functions
                     break;
                 }
                 retry++;
+            }
+        });
+    }
+
+    public static void 剧情(TaskHelper taskHelper,int maxCount)
+    {
+        taskHelper.Start(() =>
+        {
+            var keys = new List<string>() { "剧情_任务","剧情_快进","剧情_问号","剧情_跳过","剧情_对话","剧情_天眼", "剧情_CV", "副本_小怪", "准备", "失败", "失败2", "赢", "赢2", "奖励", }.AddExt(BaseKeys);
+
+            var succ = 0;
+            var fail = 0;
+            var lastClick = string.Empty;
+            while (taskHelper.IsRunning && IsRunningExt(0, succ))
+            {
+                taskHelper.WaitForPause();
+                var screen = WinHelper.CaptureWindow();
+                foreach (var key in keys)
+                {
+                    taskHelper.WaitForPause();
+                    if (!TargetImages.TryGetValue(key, out var tuple)) continue;
+                    var (mat, name) = tuple;
+                    var rect = WinHelper.Find(screen, mat);
+                    if (rect.IsEmpty) continue;
+                    switch (name)
+                    {
+                        case "失败":
+                        case "失败2":
+                            if (!lastClick.StartsWith("失败"))
+                            {
+                                fail++;
+                                Logger.PrintChallengeCount(succ, fail);
+                            }
+
+                            break;
+
+                        case "奖励":
+                        case "奖励2":
+                            if (!lastClick.StartsWith("奖励"))
+                            {
+                                succ++;
+                                Logger.PrintChallengeCount(succ, fail);
+                            }
+
+                            break;
+                    }
+
+                    lastClick = name;
+                    WinHelper.Click(rect);
+                    WinHelper.RandomDelay();
+                    break;
+                }
             }
         });
     }

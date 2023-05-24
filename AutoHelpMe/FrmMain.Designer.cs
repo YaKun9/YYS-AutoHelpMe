@@ -185,7 +185,7 @@
             radio_御魂司机.AutoSize = true;
             radio_御魂司机.Location = new Point(167, 22);
             radio_御魂司机.Name = "radio_御魂司机";
-            radio_御魂司机.Size = new Size(51, 19);
+            radio_御魂司机.Size = new Size(49, 18);
             radio_御魂司机.TabIndex = 7;
             radio_御魂司机.TabStop = true;
             radio_御魂司机.Text = "司机";
@@ -196,7 +196,7 @@
             radio_御魂打手.AutoSize = true;
             radio_御魂打手.Location = new Point(89, 22);
             radio_御魂打手.Name = "radio_御魂打手";
-            radio_御魂打手.Size = new Size(51, 19);
+            radio_御魂打手.Size = new Size(49, 18);
             radio_御魂打手.TabIndex = 6;
             radio_御魂打手.TabStop = true;
             radio_御魂打手.Text = "打手";
@@ -208,7 +208,7 @@
             radio_御魂单刷.Checked = true;
             radio_御魂单刷.Location = new Point(11, 22);
             radio_御魂单刷.Name = "radio_御魂单刷";
-            radio_御魂单刷.Size = new Size(51, 19);
+            radio_御魂单刷.Size = new Size(49, 18);
             radio_御魂单刷.TabIndex = 5;
             radio_御魂单刷.TabStop = true;
             radio_御魂单刷.Text = "单刷";
@@ -219,7 +219,7 @@
             checkBox_关闭加成.AutoSize = true;
             checkBox_关闭加成.Location = new Point(12, 41);
             checkBox_关闭加成.Name = "checkBox_关闭加成";
-            checkBox_关闭加成.Size = new Size(161, 19);
+            checkBox_关闭加成.Size = new Size(157, 18);
             checkBox_关闭加成.TabIndex = 10;
             checkBox_关闭加成.Text = "任务结束关闭加成(beta)";
             checkBox_关闭加成.UseVisualStyleBackColor = true;
@@ -244,13 +244,13 @@
             tableLayoutPanel1.Controls.Add(labelControl8, 0, 0);
             tableLayoutPanel1.Controls.Add(checkBox_斗技挂机死亡退出, 2, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(3, 19);
+            tableLayoutPanel1.Location = new Point(3, 18);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(236, 98);
+            tableLayoutPanel1.Size = new Size(236, 99);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // labelControl8
@@ -295,7 +295,7 @@
             radio_道馆.AutoSize = true;
             radio_道馆.Location = new Point(171, 21);
             radio_道馆.Name = "radio_道馆";
-            radio_道馆.Size = new Size(51, 19);
+            radio_道馆.Size = new Size(49, 18);
             radio_道馆.TabIndex = 4;
             radio_道馆.TabStop = true;
             radio_道馆.Text = "道馆";
@@ -306,7 +306,7 @@
             radio_寮突.AutoSize = true;
             radio_寮突.Location = new Point(93, 21);
             radio_寮突.Name = "radio_寮突";
-            radio_寮突.Size = new Size(51, 19);
+            radio_寮突.Size = new Size(49, 18);
             radio_寮突.TabIndex = 3;
             radio_寮突.TabStop = true;
             radio_寮突.Text = "寮突";
@@ -318,7 +318,7 @@
             radio_个突.Checked = true;
             radio_个突.Location = new Point(15, 21);
             radio_个突.Name = "radio_个突";
-            radio_个突.Size = new Size(51, 19);
+            radio_个突.Size = new Size(49, 18);
             radio_个突.TabIndex = 2;
             radio_个突.TabStop = true;
             radio_个突.Text = "个突";
@@ -327,7 +327,7 @@
             // radioGroup1
             // 
             radioGroup1.Dock = DockStyle.Top;
-            radioGroup1.Location = new Point(3, 19);
+            radioGroup1.Location = new Point(3, 18);
             radioGroup1.Name = "radioGroup1";
             radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             radioGroup1.Size = new Size(236, 25);
@@ -359,7 +359,7 @@
             // 
             // labelControl6
             // 
-            labelControl6.Location = new Point(3, 53);
+            labelControl6.Location = new Point(3, 52);
             labelControl6.Name = "labelControl6";
             labelControl6.Size = new Size(65, 15);
             labelControl6.TabIndex = 11;
@@ -368,7 +368,7 @@
             // 
             // labelControl5
             // 
-            labelControl5.Location = new Point(3, 28);
+            labelControl5.Location = new Point(3, 27);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(52, 15);
             labelControl5.TabIndex = 9;
@@ -380,7 +380,7 @@
             labelControl4.Dock = DockStyle.Fill;
             labelControl4.Location = new Point(208, 3);
             labelControl4.Name = "labelControl4";
-            labelControl4.Size = new Size(25, 19);
+            labelControl4.Size = new Size(25, 18);
             labelControl4.TabIndex = 7;
             labelControl4.Text = "次";
             // 
@@ -389,7 +389,7 @@
             labelControl3.Dock = DockStyle.Fill;
             labelControl3.Location = new Point(3, 3);
             labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(65, 19);
+            labelControl3.Size = new Size(65, 18);
             labelControl3.TabIndex = 6;
             labelControl3.Text = "个突先退";
             labelControl3.ToolTip = "退几次然后全清，0为不退直接全清";
@@ -401,7 +401,7 @@
             num_突破退次数.Margin = new Padding(0, 2, 0, 0);
             num_突破退次数.Maximum = new decimal(new int[] { 9, 0, 0, 0 });
             num_突破退次数.Name = "num_突破退次数";
-            num_突破退次数.Size = new Size(114, 23);
+            num_突破退次数.Size = new Size(114, 22);
             num_突破退次数.TabIndex = 5;
             num_突破退次数.TextAlign = HorizontalAlignment.Center;
             // 
@@ -410,7 +410,7 @@
             checkBox_突破红标花.AutoSize = true;
             checkBox_突破红标花.Dock = DockStyle.Top;
             checkBox_突破红标花.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox_突破红标花.Location = new Point(94, 28);
+            checkBox_突破红标花.Location = new Point(94, 27);
             checkBox_突破红标花.Name = "checkBox_突破红标花";
             checkBox_突破红标花.Size = new Size(108, 19);
             checkBox_突破红标花.TabIndex = 8;
@@ -420,7 +420,7 @@
             // checkBox_突破绿标五
             // 
             checkBox_突破绿标五.AutoSize = true;
-            checkBox_突破绿标五.Location = new Point(94, 53);
+            checkBox_突破绿标五.Location = new Point(94, 52);
             checkBox_突破绿标五.Name = "checkBox_突破绿标五";
             checkBox_突破绿标五.Size = new Size(78, 19);
             checkBox_突破绿标五.TabIndex = 12;
@@ -440,9 +440,9 @@
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(3, 19);
+            pictureBox1.Location = new Point(3, 18);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(219, 162);
+            pictureBox1.Size = new Size(219, 163);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -452,7 +452,7 @@
             num_挑战次数.Location = new Point(76, 11);
             num_挑战次数.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
             num_挑战次数.Name = "num_挑战次数";
-            num_挑战次数.Size = new Size(60, 23);
+            num_挑战次数.Size = new Size(60, 22);
             num_挑战次数.TabIndex = 2;
             num_挑战次数.TextAlign = HorizontalAlignment.Center;
             // 
@@ -471,17 +471,16 @@
             page_探索副本.Controls.Add(groupBox3);
             page_探索副本.Controls.Add(groupBox2);
             page_探索副本.Name = "page_探索副本";
-            page_探索副本.Size = new Size(857, 393);
+            page_探索副本.Size = new Size(857, 402);
             page_探索副本.Text = "探索副本";
             // 
             // checkBox_副本结界清理
             // 
             checkBox_副本结界清理.AutoSize = true;
-            checkBox_副本结界清理.Checked = true;
-            checkBox_副本结界清理.CheckState = CheckState.Checked;
+            checkBox_副本结界清理.Enabled = false;
             checkBox_副本结界清理.Location = new Point(231, 73);
             checkBox_副本结界清理.Name = "checkBox_副本结界清理";
-            checkBox_副本结界清理.Size = new Size(169, 19);
+            checkBox_副本结界清理.Size = new Size(158, 18);
             checkBox_副本结界清理.TabIndex = 25;
             checkBox_副本结界清理.Text = "结界票满的时候清理一下";
             checkBox_副本结界清理.UseVisualStyleBackColor = true;
@@ -503,7 +502,7 @@
             radio_副本_困难.Checked = true;
             radio_副本_困难.Location = new Point(63, 22);
             radio_副本_困难.Name = "radio_副本_困难";
-            radio_副本_困难.Size = new Size(51, 19);
+            radio_副本_困难.Size = new Size(49, 18);
             radio_副本_困难.TabIndex = 29;
             radio_副本_困难.TabStop = true;
             radio_副本_困难.Text = "困难";
@@ -514,7 +513,7 @@
             radio_副本_普通.AutoSize = true;
             radio_副本_普通.Location = new Point(6, 22);
             radio_副本_普通.Name = "radio_副本_普通";
-            radio_副本_普通.Size = new Size(51, 19);
+            radio_副本_普通.Size = new Size(49, 18);
             radio_副本_普通.TabIndex = 28;
             radio_副本_普通.TabStop = true;
             radio_副本_普通.Text = "普通";
@@ -526,7 +525,7 @@
             groupBox2.Dock = DockStyle.Left;
             groupBox2.Location = new Point(0, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(225, 393);
+            groupBox2.Size = new Size(225, 402);
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
             groupBox2.Text = "选择副本";
@@ -539,9 +538,9 @@
             list_副本章节.HorizontalScrollbar = true;
             list_副本章节.ItemAutoHeight = true;
             list_副本章节.ItemHeight = 25;
-            list_副本章节.Location = new Point(3, 19);
+            list_副本章节.Location = new Point(3, 18);
             list_副本章节.Name = "list_副本章节";
-            list_副本章节.Size = new Size(219, 371);
+            list_副本章节.Size = new Size(219, 381);
             list_副本章节.TabIndex = 22;
             list_副本章节.ToolTip = "选择功能";
             // 
@@ -549,7 +548,7 @@
             // 
             page_活动设置.Controls.Add(flowLayoutPanel1);
             page_活动设置.Name = "page_活动设置";
-            page_活动设置.Size = new Size(857, 393);
+            page_活动设置.Size = new Size(857, 402);
             page_活动设置.Text = "活动";
             // 
             // flowLayoutPanel1
@@ -839,6 +838,7 @@
             Controls.Add(panel_下半区);
             Controls.Add(panel_上半区);
             DoubleBuffered = true;
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             IconOptions.Image = (Image)resources.GetObject("FrmMain.IconOptions.Image");
             IconOptions.LargeImage = (Image)resources.GetObject("FrmMain.IconOptions.LargeImage");
             LookAndFeel.SkinName = "DevExpress Style";

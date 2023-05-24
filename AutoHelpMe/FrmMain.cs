@@ -3,7 +3,6 @@ using AutoHelpMe.Function;
 using DevExpress.XtraEditors;
 using PInvoke;
 using SageTools.Extension;
-using System.Text;
 
 namespace AutoHelpMe
 {
@@ -35,6 +34,7 @@ namespace AutoHelpMe
                 new() { Text = "结界突破", ActionName = nameof(Functions.个人突破) },
                 new() { Text = "斗技-挂机", ActionName = nameof(Functions.斗技挂机) },
                 new() { Text = "关闭加成", ActionName = nameof(Functions.关闭加成) },
+                new() { Text = "自动过剧情", ActionName = nameof(Functions.剧情) },
                 new() { Text = "当前爬塔活动(言灵)", ActionName = nameof(Functions.活动) },
                 new() { Text = "秘闻", ActionName = nameof(Functions.秘闻) },
                 new() { Text = "抽卡-草纸十连", ActionName = nameof(Functions.抽草纸) },
@@ -166,7 +166,7 @@ namespace AutoHelpMe
 
                     case nameof(Functions.探索副本):
                         {
-                            Functions.Invoke(value!, _taskHelper, num_挑战次数.Value.ToInt32(), list_副本章节.SelectedValue.ToInt32(28), radio_副本_普通.Checked);
+                            Functions.Invoke(value!, _taskHelper, num_挑战次数.Value.ToInt32(), list_副本章节.SelectedValue.ToInt32(28), radio_副本_普通.Checked, checkBox_副本结界清理.Checked);
                         }
                         break;
 
@@ -236,7 +236,8 @@ namespace AutoHelpMe
 
         private void btn_更新_Click(object sender, EventArgs e)
         {
-            XtraMessageBox.Show(this, "当前已是最新版本(其实这功能还没实现)", "当前版本：1.0");
+            XtraMessageBox.Show(this, "更新地址已复制到剪切板，请打开浏览器前往github查看更新", "温馨提示");
+            Clipboard.SetText("https://github.com/YaKun9/YYS-AutoHelpMe/releases");
         }
 
         private void btn_关于_Click(object sender, EventArgs e)
