@@ -177,8 +177,6 @@ public partial class Functions
                             }
                             continue;
                     }
-
-                    Logger.DeBug(name);
                     lastClick = name;
                     if (lastClick.StartsWith("彼岸花血条") && !isNeedRedFlag) break;
                     if (lastClick.StartsWith("突破攻破0") || lastClick == "十勾玉") break;

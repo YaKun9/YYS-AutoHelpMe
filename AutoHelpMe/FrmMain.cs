@@ -49,6 +49,7 @@ namespace AutoHelpMe
                 new() { Text = "第二十七章", ActionName = "27" },
                 new() { Text = "第二十六章", ActionName = "26" },
                 new() { Text = "第二十五章", ActionName = "25" },
+                new() { Text = "第十四章", ActionName = "14" },
                 new() { Text = "第十三章", ActionName = "13" },
                 new() { Text = "第十二章", ActionName = "12" },
                 new() { Text = "第十一章", ActionName = "11" },

@@ -184,6 +184,9 @@
     <None Update="Resource\MNQImages\副本_13.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resource\MNQImages\副本_14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resource\MNQImages\副本_25.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
