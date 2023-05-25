@@ -178,6 +178,9 @@
     <None Update="Resource\MNQImages\副本_11.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resource\MNQImages\副本_12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resource\MNQImages\副本_25.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -316,6 +319,9 @@
     <None Update="Resource\MNQImages\挑战_斗技2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resource\MNQImages\挑战_活动.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resource\MNQImages\挑战_秘闻.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -325,16 +331,10 @@
     <None Update="Resource\MNQImages\挑战_组队2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Resource\MNQImages\挑战_言灵.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Resource\MNQImages\挑战_道馆12.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resource\MNQImages\挑战_道馆22.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resource\MNQImages\挑战_鬼童丸.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resource\MNQImages\探索.png">

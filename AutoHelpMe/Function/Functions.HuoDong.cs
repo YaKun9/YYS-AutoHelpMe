@@ -12,7 +12,7 @@ public partial class Functions
             var succ = 0;
             var fail = 0;
             var lastClick = string.Empty;
-            var keys = new List<string>() { "阵容_解锁", "挑战_鬼童丸", "挑战_言灵", "准备", "失败", "赢", "奖励" };
+            var keys = new List<string>() { "阵容_解锁", "挑战_活动", "准备", "失败", "赢", "奖励" };
             while (taskHelper.IsRunning && IsRunningExt(maxCount, succ))
             {
                 taskHelper.WaitForPause();
