@@ -35,7 +35,7 @@ namespace AutoHelpMe
                 new() { Text = "斗技-挂机", ActionName = nameof(Functions.斗技挂机) },
                 new() { Text = "关闭加成", ActionName = nameof(Functions.关闭加成) },
                 new() { Text = "自动过剧情", ActionName = nameof(Functions.剧情) },
-                new() { Text = "当前爬塔活动(言灵)", ActionName = nameof(Functions.活动) },
+                new() { Text = "当前爬塔活动", ActionName = nameof(Functions.活动) },
                 new() { Text = "秘闻", ActionName = nameof(Functions.秘闻) },
                 new() { Text = "抽卡-草纸十连", ActionName = nameof(Functions.抽草纸) },
             };
@@ -49,6 +49,7 @@ namespace AutoHelpMe
                 new() { Text = "第二十七章", ActionName = "27" },
                 new() { Text = "第二十六章", ActionName = "26" },
                 new() { Text = "第二十五章", ActionName = "25" },
+                new() { Text = "第十五章", ActionName = "15" },
                 new() { Text = "第十四章", ActionName = "14" },
                 new() { Text = "第十三章", ActionName = "13" },
                 new() { Text = "第十二章", ActionName = "12" },
