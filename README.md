@@ -16,6 +16,8 @@
 
 ![image](https://github.com/YaKun9/YYS-AutoHelpMe/assets/131952790/953f424c-0177-4f88-b565-b356f573979f)
 
+**求求点个Star吧！！！**
+
 
 ## 功能清单&待办事项
 
