@@ -93,7 +93,7 @@ public partial class Functions
     {
         taskHelper.Start(() =>
         {
-            var keys = new List<string>() { "挑战_秘闻", "准备", "失败", "失败2", "赢", "赢2", "奖励", "秘闻通关" }.AddExt(BaseKeys);
+            var keys = new List<string>() { "挑战_秘闻", "挑战_秘闻2", "准备", "失败", "失败2", "赢", "赢2", "奖励", "秘闻通关" }.AddExt(BaseKeys);
 
             var succ = 0;
             var fail = 0;

@@ -334,6 +334,9 @@
     <None Update="Resource\MNQImages\挑战_秘闻.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resource\MNQImages\挑战_秘闻2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resource\MNQImages\挑战_组队.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
