@@ -41,7 +41,7 @@
 
 1. 需要安装[`.NET6`运行环境](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.14-windows-x64-installer)
 2. 模拟器分辨率 1280*720 ，DPI 240
-3. 以管理员身份运行软件，按照软件提示选择模拟器窗口
+3. 以**管理员身份**运行软件，按照软件提示选择模拟器窗口
 
 ### 详细教程
 
