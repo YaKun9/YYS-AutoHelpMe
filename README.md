@@ -37,6 +37,10 @@
   
 </details>
 
+## 更新日志
+ 
+[更新日志](https://github.com/YaKun9/YYS-AutoHelpMe/commits/main) 
+ 
 ## 使用帮助
 
 1. 需要安装[`.NET6`运行环境](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.14-windows-x64-installer)
