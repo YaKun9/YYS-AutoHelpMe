@@ -16,4 +16,10 @@
     <PackageReference Include="OpenCvSharp4.Windows" Version="4.8.0.20230708" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Resource\tapd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

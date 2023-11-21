@@ -3,6 +3,7 @@ FindWindow
 GetWindowRect
 GetWindowDC
 ReleaseDC
+WindowFromPoint
 
 # 鼠标和键盘输入消息发送
 PostMessage

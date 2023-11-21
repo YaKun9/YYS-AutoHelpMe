@@ -1,4 +1,6 @@
-using Windows.Win32;
+﻿using Windows.Win32;
+using Windows.Win32.Foundation;
+using AutoHelpMe2.Helper;
 
 namespace AutoHelpMe2
 {
@@ -11,13 +13,13 @@ namespace AutoHelpMe2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //584 417
-            var ss = PInvoke.FindWindow(null, "΢��");
-            var sw = Win32Helper2.CaptureWindow(ss);
-            pictureBox1.Image=sw;
+            var ss = PInvoke.FindWindow(null, "��ҵ΢��");
+            var sw = Win32Helper.CaptureWindow(ss);
+            pictureBox1.Image = sw;
 
-            Win32Helper2.DragWithCurve(ss,new Point(584,417),new Point(584,617));
-
+            var rect = OpenCvHelper.FindImage(sw, "Resources/tapd.png");
+            
+            Win32Helper.Click_Left(ss, rect);
         }
     }
 }
