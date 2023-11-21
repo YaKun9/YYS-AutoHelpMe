@@ -1,9 +1,9 @@
 ﻿using OpenCvSharp;
 using System.Drawing.Imaging;
 
-namespace AutoHelpMe2.Helper
+namespace AutoHelpMe2.Service
 {
-    public class OpenCvHelper
+    public class OpenCvService
     {
         /// <summary>
         /// 大图找小图
@@ -12,7 +12,7 @@ namespace AutoHelpMe2.Helper
         /// <param name="target">小图</param>
         /// <param name="threshold">匹配度阈值,越高越精准</param>
         /// <returns></returns>
-        internal static Windows.Win32.Foundation.RECT FindImage(Bitmap source, string target, double threshold = 0.9)
+        internal Windows.Win32.Foundation.RECT FindImage(Bitmap source, string target, double threshold = 0.9)
         {
             using var sourceMat = BitmapToMat(source);
             using var targetMat = Cv2.ImRead(target);
@@ -33,7 +33,7 @@ namespace AutoHelpMe2.Helper
             return new Windows.Win32.Foundation.RECT();
         }
 
-        private static Mat BitmapToMat(Bitmap bitmap)
+        private Mat BitmapToMat(Bitmap bitmap)
         {
             using var stream = new MemoryStream();
             bitmap.Save(stream, ImageFormat.Jpeg);

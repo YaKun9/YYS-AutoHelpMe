@@ -1,12 +1,15 @@
 ﻿using AutoHelpMe2.Extension;
+using AutoHelpMe2.Helper;
+using Furion.DependencyInjection;
 using System.Drawing.Imaging;
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.Graphics.Gdi;
+using Point = System.Drawing.Point;
 
-namespace AutoHelpMe2.Helper
+namespace AutoHelpMe2.Service
 {
-    public class Win32Helper
+    public class Win32Service : ISingleton
     {
         /// <summary>
         /// 查找窗口句柄
@@ -15,7 +18,7 @@ namespace AutoHelpMe2.Helper
         /// <param name="isWait">是否等待窗口出现</param>
         /// <param name="retry">窗口等待次数(间隔3秒)</param>
         /// <returns></returns>
-        internal static HWND FindWindow(string windowTitle, bool isWait = false, int retry = 10)
+        internal HWND FindWindow(string windowTitle, bool isWait = false, int retry = 10)
         {
             var handle = PInvoke.FindWindow(null, windowTitle);
             if (handle == HWND.Null && isWait)
@@ -29,7 +32,7 @@ namespace AutoHelpMe2.Helper
             return handle;
         }
 
-        internal static HWND FindWindow(Point point)
+        internal HWND FindWindow(Point point)
         {
             return PInvoke.WindowFromPoint(point);
         }
@@ -39,7 +42,7 @@ namespace AutoHelpMe2.Helper
         /// </summary>
         /// <param name="hWnd">窗口句柄</param>
         /// <returns></returns>
-        internal static Bitmap CaptureWindow(HWND hWnd)
+        internal Bitmap CaptureWindow(HWND hWnd)
         {
             PInvoke.GetWindowRect(hWnd, out var rect);
             var width = rect.right - rect.left;
@@ -63,7 +66,7 @@ namespace AutoHelpMe2.Helper
         /// </summary>
         /// <param name="hWnd">窗口句柄</param>
         /// <param name="rect">点击区域</param>
-        internal static void Click_Left(HWND hWnd, RECT rect)
+        internal void Click_Left(HWND hWnd, RECT rect)
         {
             var point = rect.GetRandomPoint();
             PInvoke.PostMessage(hWnd, PInvoke.WM_LBUTTONDOWN, new WPARAM(0x0001), point);
@@ -77,7 +80,7 @@ namespace AutoHelpMe2.Helper
         /// <param name="hWnd">窗口句柄</param>
         /// <param name="x">x轴坐标</param>
         /// <param name="y">y轴坐标</param>
-        internal static void Click_Left(HWND hWnd, int x, int y)
+        internal void Click_Left(HWND hWnd, int x, int y)
         {
             var point = x + (y << 16);
             PInvoke.PostMessage(hWnd, PInvoke.WM_LBUTTONDOWN, new WPARAM(0x0001), point);
