@@ -30,7 +30,12 @@
         {
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            txtLog = new RichTextBox();
+            panelLog = new Panel();
+            btnOpenLogDir = new LinkLabel();
+            cbxShowDebug = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelLog.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -47,21 +52,65 @@
             // 
             pictureBox1.Location = new Point(12, 101);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(776, 337);
+            pictureBox1.Size = new Size(187, 321);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            // 
+            // txtLog
+            // 
+            txtLog.BorderStyle = BorderStyle.None;
+            txtLog.Location = new Point(3, 26);
+            txtLog.Name = "txtLog";
+            txtLog.Size = new Size(276, 537);
+            txtLog.TabIndex = 2;
+            txtLog.Text = "";
+            // 
+            // panelLog
+            // 
+            panelLog.Controls.Add(btnOpenLogDir);
+            panelLog.Controls.Add(cbxShowDebug);
+            panelLog.Controls.Add(txtLog);
+            panelLog.Dock = DockStyle.Right;
+            panelLog.Location = new Point(844, 0);
+            panelLog.Name = "panelLog";
+            panelLog.Size = new Size(282, 566);
+            panelLog.TabIndex = 3;
+            // 
+            // btnOpenLogDir
+            // 
+            btnOpenLogDir.AutoSize = true;
+            btnOpenLogDir.Location = new Point(194, 6);
+            btnOpenLogDir.Name = "btnOpenLogDir";
+            btnOpenLogDir.Size = new Size(80, 17);
+            btnOpenLogDir.TabIndex = 4;
+            btnOpenLogDir.TabStop = true;
+            btnOpenLogDir.Text = "打开日志文件";
+            // 
+            // cbxShowDebug
+            // 
+            cbxShowDebug.AutoSize = true;
+            cbxShowDebug.Location = new Point(113, 5);
+            cbxShowDebug.Name = "cbxShowDebug";
+            cbxShowDebug.Size = new Size(75, 21);
+            cbxShowDebug.TabIndex = 3;
+            cbxShowDebug.Text = "调试信息";
+            cbxShowDebug.UseVisualStyleBackColor = true;
             // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(1126, 566);
+            Controls.Add(panelLog);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Name = "FrmMain";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelLog.ResumeLayout(false);
+            panelLog.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -69,5 +118,9 @@
 
         private Button button1;
         private PictureBox pictureBox1;
+        private RichTextBox txtLog;
+        private Panel panelLog;
+        private CheckBox cbxShowDebug;
+        private LinkLabel btnOpenLogDir;
     }
 }

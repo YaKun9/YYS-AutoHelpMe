@@ -30,4 +30,10 @@
     <Folder Include="EventBus\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="FrmMain.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>

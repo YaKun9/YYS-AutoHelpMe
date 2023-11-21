@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace AutoHelpMe2.EventBus
 {
-    public class LogEventSubscriber : IEventSubscriber, ISingleton
+    public class LogEventSubscriber : IEventSubscriber, ITransient
     {
         [EventSubscribe("LogEvent")]
         public async Task ExceptionHandler(EventHandlerExecutingContext context)
