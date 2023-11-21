@@ -1,9 +1,10 @@
-﻿using OpenCvSharp;
+﻿using Furion.DependencyInjection;
+using OpenCvSharp;
 using System.Drawing.Imaging;
 
 namespace AutoHelpMe2.Service
 {
-    public class OpenCvService
+    public class OpenCvService : ISingleton
     {
         /// <summary>
         /// 大图找小图
