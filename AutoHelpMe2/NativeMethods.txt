@@ -1,0 +1,14 @@
+﻿# 窗口查找和管理
+FindWindow
+GetWindowRect
+GetWindowDC
+ReleaseDC
+
+# 鼠标和键盘输入消息发送
+PostMessage
+WM_LBUTTONDOWN
+WM_MOUSEMOVE
+WM_LBUTTONUP
+
+# 图形和绘图操作
+BitBlt
