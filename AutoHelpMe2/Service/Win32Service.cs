@@ -1,5 +1,4 @@
 ﻿using AutoHelpMe2.Extension;
-using AutoHelpMe2.Helper;
 using Furion.DependencyInjection;
 using System.Drawing.Imaging;
 using Windows.Win32;
@@ -11,6 +10,13 @@ namespace AutoHelpMe2.Service
 {
     public class Win32Service : ISingleton
     {
+        private readonly CommonService _commonService;
+
+        public Win32Service(CommonService commonService)
+        {
+            _commonService = commonService;
+        }
+
         /// <summary>
         /// 查找窗口句柄
         /// </summary>
@@ -37,6 +43,24 @@ namespace AutoHelpMe2.Service
             return PInvoke.WindowFromPoint(point);
         }
 
+        internal string GetWindowTitle(HWND hWnd)
+        {
+            const int nChars = 256;
+            Span<char> buffer = stackalloc char[nChars];
+            unsafe
+            {
+                fixed (char* pBuffer = buffer)
+                {
+                    var length = PInvoke.GetWindowText(hWnd, (PWSTR)pBuffer, nChars);
+                    if (length > 0)
+                    {
+                        return new string(pBuffer, 0, length);
+                    }
+                }
+            }
+            return "";
+        }
+
         /// <summary>
         /// 窗口截屏
         /// </summary>
@@ -61,6 +85,11 @@ namespace AutoHelpMe2.Service
             return bmp;
         }
 
+        internal HWND WindowFromPoint(Point point)
+        {
+            return PInvoke.WindowFromPoint(point);
+        }
+
         /// <summary>
         /// 单击鼠标左键
         /// </summary>
@@ -70,7 +99,7 @@ namespace AutoHelpMe2.Service
         {
             var point = rect.GetRandomPoint();
             PInvoke.PostMessage(hWnd, PInvoke.WM_LBUTTONDOWN, new WPARAM(0x0001), point);
-            CommonHelper.RandomDelay();
+            _commonService.RandomDelay();
             PInvoke.PostMessage(hWnd, PInvoke.WM_LBUTTONUP, new WPARAM(0x0001), point);
         }
 
@@ -84,7 +113,7 @@ namespace AutoHelpMe2.Service
         {
             var point = x + (y << 16);
             PInvoke.PostMessage(hWnd, PInvoke.WM_LBUTTONDOWN, new WPARAM(0x0001), point);
-            CommonHelper.RandomDelay();
+            _commonService.RandomDelay();
             PInvoke.PostMessage(hWnd, PInvoke.WM_LBUTTONUP, new WPARAM(0x0001), point);
         }
     }

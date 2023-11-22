@@ -23,7 +23,7 @@ namespace AutoHelpMe2
                         case LogLevel.Error:
                         case LogLevel.Information:
                         case LogLevel.Warning:
-                            var log = $"{logMsg.LogDateTime:HH:mm:ss} {logMsg.LogLevel}：{logMsg.Message}";
+                            var log = $"{logMsg.LogDateTime:HH:mm:ss}_{logMsg.LogLevel.ToString()[..1]}：{logMsg.Message}";
                             MessageCenter.PublishAsync(new LogEventSource(logMsg.LogLevel, log));
                             break;
                     }

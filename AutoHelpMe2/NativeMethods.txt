@@ -2,6 +2,7 @@
 FindWindow
 GetWindowRect
 GetWindowDC
+GetWindowText
 ReleaseDC
 WindowFromPoint
 
