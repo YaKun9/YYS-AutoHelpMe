@@ -1,7 +1,8 @@
-﻿using AutoHelpMe2.Helper;
-using AutoHelpMe2.Service;
+﻿using AutoHelpMe2.Service;
 using Furion;
+using Furion.EventBus;
 using Furion.Logging;
+using static AutoHelpMe2.EventBus.EventBusConst;
 
 namespace AutoHelpMe2
 {
@@ -9,14 +10,15 @@ namespace AutoHelpMe2
     {
         private readonly Win32Service _win32Service;
         private readonly OpenCvService _openCvService;
+        private readonly IEventBusFactory _eventBusFactory;
+
         public FrmMain()
         {
             InitializeComponent();
             _win32Service = App.GetService<Win32Service>();
             _openCvService = App.GetService<OpenCvService>();
+            _eventBusFactory = App.GetService<IEventBusFactory>();
         }
-        
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -28,6 +30,14 @@ namespace AutoHelpMe2
             var rect = _openCvService.FindImage(sw, "Resource/tapd.png");
 
             _win32Service.Click_Left(ss, rect);
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            MessageCenter.Subscribe(EventIds.LOG_EVENT, async (data) =>
+            {
+                await Task.CompletedTask;
+            });
         }
     }
 }

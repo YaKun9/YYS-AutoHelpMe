@@ -13,9 +13,6 @@ namespace AutoHelpMe2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddEventBus();
-
-            var eventPublisher = App.GetService<IEventPublisher>();
-
             services.AddConsoleFormatter(options =>
             {
                 options.WriteHandler = (logMsg, _, _, _, _) =>
@@ -27,7 +24,7 @@ namespace AutoHelpMe2
                         case LogLevel.Information:
                         case LogLevel.Warning:
                             var log = $"{logMsg.LogDateTime:HH:mm:ss} {logMsg.LogLevel}：{logMsg.Message}";
-                            eventPublisher.PublishAsync(new LogEventSource(logMsg.LogLevel, log));
+                            MessageCenter.PublishAsync(new LogEventSource(logMsg.LogLevel, log));
                             break;
                     }
                 };

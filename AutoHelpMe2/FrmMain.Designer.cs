@@ -61,6 +61,7 @@
             Controls.Add(button1);
             Name = "FrmMain";
             Text = "Form1";
+            Load += FrmMain_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
