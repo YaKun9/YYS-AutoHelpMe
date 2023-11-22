@@ -38,11 +38,9 @@ namespace AutoHelpMe2.Service
             return handle;
         }
 
-        internal HWND FindWindow(Point point)
-        {
-            return PInvoke.WindowFromPoint(point);
-        }
-
+        /// <summary>
+        /// 获取窗口标题
+        /// </summary>
         internal string GetWindowTitle(HWND hWnd)
         {
             const int nChars = 256;
@@ -59,6 +57,15 @@ namespace AutoHelpMe2.Service
                 }
             }
             return "";
+        }
+
+        /// <summary>
+        /// 获取窗口位置/尺寸
+        /// </summary>
+        internal RECT GetWindowRect(HWND hWnd)
+        {
+            PInvoke.GetWindowRect(hWnd, out var rect);
+            return rect;
         }
 
         /// <summary>
@@ -85,6 +92,9 @@ namespace AutoHelpMe2.Service
             return bmp;
         }
 
+        /// <summary>
+        /// 通过坐标获取窗口句柄
+        /// </summary>
         internal HWND WindowFromPoint(Point point)
         {
             return PInvoke.WindowFromPoint(point);
