@@ -29,10 +29,12 @@ jobs:
       run: git fetch upstream master
 
     - name: Reset v2 branch to match remote master
-      run: git reset --hard upstream/master #强制覆盖
+      run: git reset --hard upstream/master
 
     - name: Push changes to v2 branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git push origin v2 --force
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git v2 --force
