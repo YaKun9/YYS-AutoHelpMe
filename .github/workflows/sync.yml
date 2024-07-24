@@ -31,6 +31,9 @@ jobs:
     - name: Reset v2 branch to match remote master
       run: git reset --hard upstream/master
 
+    - name: Merge changes from remote master
+      run: git merge upstream/master --allow-unrelated-histories
+
     - name: Push changes to v2 branch
       run: |
         git config --global user.name 'github-actions[bot]'
