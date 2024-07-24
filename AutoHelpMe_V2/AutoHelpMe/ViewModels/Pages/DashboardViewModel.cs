@@ -1,4 +1,6 @@
-﻿namespace AutoHelpMe.ViewModels.Pages
+﻿using Serilog;
+
+namespace AutoHelpMe.ViewModels.Pages
 {
     public partial class DashboardViewModel : ObservableObject
     {
@@ -8,6 +10,7 @@
         [RelayCommand]
         private void OnCounterIncrement()
         {
+            Log.Information("我点点点");
             Counter++;
         }
     }

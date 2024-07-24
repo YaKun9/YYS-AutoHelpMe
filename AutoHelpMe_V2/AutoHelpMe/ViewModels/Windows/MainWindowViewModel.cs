@@ -9,7 +9,7 @@ namespace AutoHelpMe.ViewModels.Windows
         private string _applicationTitle = "AutoHelpMe";
 
         [ObservableProperty]
-        private ObservableCollection<object> _menuItems =
+        private ObservableCollection<NavigationViewItem> _menuItems =
         [
             new NavigationViewItem()
             {
@@ -20,14 +20,39 @@ namespace AutoHelpMe.ViewModels.Windows
 
             new NavigationViewItem()
             {
-                Content = "数据",
+                Content = "Onmyoji",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.Games24 },
+                TargetPageType = typeof(Views.Pages.OnmyojiPage)
+            },
+
+            new NavigationViewItem()
+            {
+                Content = "菜单2",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.ConvertRange24 },
+                TargetPageType = typeof(Views.Pages.DataPage)
+            },
+            new NavigationViewItem()
+            {
+                Content = "菜单3",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.DataHistogram24 },
+                TargetPageType = typeof(Views.Pages.DataPage)
+            },
+            new NavigationViewItem()
+            {
+                Content = "菜单4",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.DataHistogram24 },
+                TargetPageType = typeof(Views.Pages.DataPage)
+            },
+            new NavigationViewItem()
+            {
+                Content = "菜单5",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.DataHistogram24 },
                 TargetPageType = typeof(Views.Pages.DataPage)
             },
         ];
 
         [ObservableProperty]
-        private ObservableCollection<object> _footerMenuItems =
+        private ObservableCollection<NavigationViewItem> _footerMenuItems =
         [
             new NavigationViewItem()
             {

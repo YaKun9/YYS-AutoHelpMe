@@ -73,6 +73,9 @@ namespace AutoHelpMe
                 services.AddSingleton<DataViewModel>();
                 services.AddSingleton<SettingsPage>();
                 services.AddSingleton<SettingsViewModel>();
+
+                services.AddSingleton<OnmyojiPage>();
+                services.AddSingleton<OnmyojiViewModel>();
             }).Build();
 
         /// <summary>
