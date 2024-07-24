@@ -2,13 +2,13 @@
 using System.Windows.Data;
 using Wpf.Ui.Appearance;
 
-namespace AutoHelpMe_V2.Helpers
+namespace AutoHelpMe.Helpers
 {
     internal class EnumToBooleanConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (parameter is not String enumString)
+            if (parameter is not string enumString)
             {
                 throw new ArgumentException("ExceptionEnumToBooleanConverterParameterMustBeAnEnumName");
             }
@@ -25,7 +25,7 @@ namespace AutoHelpMe_V2.Helpers
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (parameter is not String enumString)
+            if (parameter is not string enumString)
             {
                 throw new ArgumentException("ExceptionEnumToBooleanConverterParameterMustBeAnEnumName");
             }

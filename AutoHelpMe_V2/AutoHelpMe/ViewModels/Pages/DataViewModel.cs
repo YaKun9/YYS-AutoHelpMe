@@ -1,4 +1,4 @@
-﻿using AutoHelpMe_V2.Models;
+﻿using AutoHelpMe.Models;
 using System.Windows.Media;
 using Wpf.Ui.Controls;
 

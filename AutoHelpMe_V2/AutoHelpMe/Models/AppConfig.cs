@@ -1,4 +1,4 @@
-﻿namespace AutoHelpMe_V2.Models
+﻿namespace AutoHelpMe.Models
 {
     public class AppConfig
     {

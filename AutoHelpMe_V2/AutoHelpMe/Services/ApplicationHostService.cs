@@ -1,10 +1,11 @@
-﻿using AutoHelpMe_V2.Views.Pages;
+﻿using AutoHelpMe_V2;
+using AutoHelpMe_V2.Views.Pages;
 using AutoHelpMe_V2.Views.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Wpf.Ui;
 
-namespace AutoHelpMe_V2.Services
+namespace AutoHelpMe.Services
 {
     /// <summary>
     /// Managed host of the application.

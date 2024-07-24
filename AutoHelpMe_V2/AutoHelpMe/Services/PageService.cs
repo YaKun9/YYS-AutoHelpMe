@@ -1,6 +1,6 @@
 using Wpf.Ui;
 
-namespace AutoHelpMe_V2.Services
+namespace AutoHelpMe.Services
 {
     /// <summary>
     /// Service that provides pages for navigation.

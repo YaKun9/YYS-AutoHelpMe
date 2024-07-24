@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media;
 
-namespace AutoHelpMe_V2.Models
+namespace AutoHelpMe.Models
 {
     public struct DataColor
     {

@@ -1,4 +1,4 @@
-namespace AutoHelpMe_V2.Resources
+namespace AutoHelpMe.Resources
 {
     public partial class Translations
     {
