@@ -10,8 +10,14 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="Make Onmyoji Great Again" HorizontalAlignment="Center" FontSize="16"></TextBlock>
-            <TabControl>
-                <TabItem Header="总览">
+            <TabControl BorderThickness="1" BorderBrush="Black">
+                <TabControl.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="MinWidth" Value="50"/>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    </Style>
+                </TabControl.Resources>
+                <TabItem Header="总览" >
                     <Grid />
                 </TabItem>
                 <TabItem Header="通用">
@@ -21,6 +27,15 @@
                     <Grid />
                 </TabItem>
                 <TabItem Header="其他2">
+                    <Grid />
+                </TabItem>
+                <TabItem Header="其他3">
+                    <Grid />
+                </TabItem>
+                <TabItem Header="其他4">
+                    <Grid />
+                </TabItem>
+                <TabItem Header="其他5">
                     <Grid />
                 </TabItem>
             </TabControl>
