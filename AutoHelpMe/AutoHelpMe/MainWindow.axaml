@@ -2,8 +2,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="600"
+        Width="1000" Height="600" MaxWidth="1000" MaxHeight="600"
+        CanResize="False"
         x:Class="AutoHelpMe.MainWindow"
         Title="AutoHelpMe">
-    Welcome to Avalonia!
+    <Border Background="LightBlue">
+        <Grid ColumnDefinitions="75* 25*">
+            <Panel Grid.Column="0" Name="MainPanel" Background="LightSlateGray">
+                <Button Content="Click Me" Width="100" Height="40" Click="Button_Click" />
+            </Panel>
+            <Panel Grid.Column="1" Name="LogPanel">
+                <TextBox IsReadOnly="True" Name="LogTextBox" Focusable="False" FontSize="12" TextWrapping="WrapWithOverflow"></TextBox>
+            </Panel>
+        </Grid>
+    </Border>
+
+
 </Window>
