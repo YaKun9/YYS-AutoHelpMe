@@ -28,11 +28,11 @@ jobs:
     - name: Fetch remote master branch
       run: git fetch upstream master
 
-    - name: Merge remote master into v2
-      run: git merge upstream/master
+    - name: Reset v2 branch to match remote master
+      run: git reset --hard upstream/master #强制覆盖
 
     - name: Push changes to v2 branch
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git push origin v2
+        git push origin v2 --force
