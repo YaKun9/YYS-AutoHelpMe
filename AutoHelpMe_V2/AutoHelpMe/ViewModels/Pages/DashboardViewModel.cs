@@ -1,4 +1,4 @@
-﻿namespace AutoHelpMe_V2.ViewModels.Pages
+﻿namespace AutoHelpMe.ViewModels.Pages
 {
     public partial class DashboardViewModel : ObservableObject
     {

@@ -2,7 +2,7 @@
 using System.Windows.Media;
 using Wpf.Ui.Controls;
 
-namespace AutoHelpMe_V2.ViewModels.Pages
+namespace AutoHelpMe.ViewModels.Pages
 {
     public partial class DataViewModel : ObservableObject, INavigationAware
     {

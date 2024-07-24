@@ -1,45 +1,46 @@
 ﻿using System.Collections.ObjectModel;
 using Wpf.Ui.Controls;
 
-namespace AutoHelpMe_V2.ViewModels.Windows
+namespace AutoHelpMe.ViewModels.Windows
 {
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = "WPF UI - AutoHelpMe_V2";
+        private string _applicationTitle = "AutoHelpMe";
 
         [ObservableProperty]
-        private ObservableCollection<object> _menuItems = new()
-        {
+        private ObservableCollection<object> _menuItems =
+        [
             new NavigationViewItem()
             {
-                Content = "Home",
+                Content = "首页",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Home24 },
                 TargetPageType = typeof(Views.Pages.DashboardPage)
             },
+
             new NavigationViewItem()
             {
-                Content = "Data",
+                Content = "数据",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.DataHistogram24 },
                 TargetPageType = typeof(Views.Pages.DataPage)
-            }
-        };
+            },
+        ];
 
         [ObservableProperty]
-        private ObservableCollection<object> _footerMenuItems = new()
-        {
+        private ObservableCollection<object> _footerMenuItems =
+        [
             new NavigationViewItem()
             {
-                Content = "Settings",
+                Content = "设置",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Settings24 },
                 TargetPageType = typeof(Views.Pages.SettingsPage)
             }
-        };
+        ];
 
         [ObservableProperty]
-        private ObservableCollection<MenuItem> _trayMenuItems = new()
-        {
+        private ObservableCollection<MenuItem> _trayMenuItems =
+        [
             new MenuItem { Header = "Home", Tag = "tray_home" }
-        };
+        ];
     }
 }

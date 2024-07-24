@@ -1,7 +1,8 @@
-﻿using AutoHelpMe_V2.ViewModels.Pages;
+﻿using AutoHelpMe.ViewModels.Pages;
 using Wpf.Ui.Controls;
+using DashboardViewModel = AutoHelpMe.ViewModels.Pages.DashboardViewModel;
 
-namespace AutoHelpMe_V2.Views.Pages
+namespace AutoHelpMe.Views.Pages
 {
     public partial class DashboardPage : INavigableView<DashboardViewModel>
     {

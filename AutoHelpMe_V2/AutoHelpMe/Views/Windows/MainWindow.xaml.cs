@@ -1,19 +1,15 @@
-﻿using AutoHelpMe_V2.ViewModels.Windows;
+﻿using AutoHelpMe.ViewModels.Windows;
 using Wpf.Ui;
 using Wpf.Ui.Appearance;
 using Wpf.Ui.Controls;
 
-namespace AutoHelpMe_V2.Views.Windows
+namespace AutoHelpMe.Views.Windows
 {
     public partial class MainWindow : INavigationWindow
     {
         public MainWindowViewModel ViewModel { get; }
 
-        public MainWindow(
-            MainWindowViewModel viewModel,
-            IPageService pageService,
-            INavigationService navigationService
-        )
+        public MainWindow(MainWindowViewModel viewModel, IPageService pageService, INavigationService navigationService)
         {
             ViewModel = viewModel;
             DataContext = this;

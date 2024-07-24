@@ -1,17 +1,20 @@
 ﻿using AutoHelpMe.Services;
-using AutoHelpMe_V2.ViewModels.Pages;
-using AutoHelpMe_V2.ViewModels.Windows;
-using AutoHelpMe_V2.Views.Pages;
-using AutoHelpMe_V2.Views.Windows;
+using AutoHelpMe.ViewModels.Pages;
+using AutoHelpMe.ViewModels.Windows;
+using AutoHelpMe.Views.Pages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
+using Serilog.Events;
+using Serilog.Sinks.RichTextBox.Abstraction;
 using System.IO;
 using System.Reflection;
 using System.Windows.Threading;
 using Wpf.Ui;
+using DashboardViewModel = AutoHelpMe.ViewModels.Pages.DashboardViewModel;
 
-namespace AutoHelpMe_V2
+namespace AutoHelpMe
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -23,11 +26,29 @@ namespace AutoHelpMe_V2
         // https://docs.microsoft.com/dotnet/core/extensions/dependency-injection
         // https://docs.microsoft.com/dotnet/core/extensions/configuration
         // https://docs.microsoft.com/dotnet/core/extensions/logging
-        private static readonly IHost _host = Host
+        private static readonly IHost Host = Microsoft.Extensions.Hosting.Host
             .CreateDefaultBuilder()
             .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)); })
             .ConfigureServices((context, services) =>
             {
+                #region Serilog
+
+                var richTextBox = new RichTextBoxImpl();
+                services.AddSingleton<IRichTextBox>(richTextBox);
+
+                var loggerConfiguration = new LoggerConfiguration()
+                    .WriteTo.File("logs/auto-help-me.log", outputTemplate: "[{Timestamp:HH:mm:ss.fff}] [{Level:u3}] {SourceContext}{NewLine}{Message}{NewLine}{Exception}{NewLine}", rollingInterval: RollingInterval.Day)
+                    .MinimumLevel.Debug()
+                    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                    .MinimumLevel.Override("Microsoft.Hosting.Lifetime", LogEventLevel.Warning);
+                Log.Logger = loggerConfiguration.CreateLogger();
+                services.AddLogging(c => c.AddSerilog());
+
+                //todo 输出到RichTextBox
+                //loggerConfiguration.WriteTo.RichTextBox(richTextBox, LogEventLevel.Information, outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");
+
+                #endregion Serilog
+
                 services.AddHostedService<ApplicationHostService>();
 
                 // Page resolver service
@@ -43,7 +64,7 @@ namespace AutoHelpMe_V2
                 services.AddSingleton<INavigationService, NavigationService>();
 
                 // Main window with navigation
-                services.AddSingleton<INavigationWindow, MainWindow>();
+                services.AddSingleton<INavigationWindow, AutoHelpMe.Views.Windows.MainWindow>();
                 services.AddSingleton<MainWindowViewModel>();
 
                 services.AddSingleton<DashboardPage>();
@@ -59,10 +80,9 @@ namespace AutoHelpMe_V2
         /// </summary>
         /// <typeparam name="T">Type of the service to get.</typeparam>
         /// <returns>Instance of the service or <see langword="null"/>.</returns>
-        public static T GetService<T>()
-            where T : class
+        public static T GetService<T>() where T : class
         {
-            return _host.Services.GetService(typeof(T)) as T;
+            return Host.Services.GetService(typeof(T)) as T;
         }
 
         /// <summary>
@@ -70,7 +90,7 @@ namespace AutoHelpMe_V2
         /// </summary>
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            _host.Start();
+            Host.Start();
         }
 
         /// <summary>
@@ -78,9 +98,9 @@ namespace AutoHelpMe_V2
         /// </summary>
         private async void OnExit(object sender, ExitEventArgs e)
         {
-            await _host.StopAsync();
+            await Host.StopAsync();
 
-            _host.Dispose();
+            Host.Dispose();
         }
 
         /// <summary>

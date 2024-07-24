@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AutoHelpMe_V2
+namespace AutoHelpMe
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -1,6 +1,6 @@
-﻿using AutoHelpMe_V2;
-using AutoHelpMe_V2.Views.Pages;
-using AutoHelpMe_V2.Views.Windows;
+﻿using AutoHelpMe;
+using AutoHelpMe.Views.Pages;
+using AutoHelpMe.Views.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Wpf.Ui;

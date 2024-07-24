@@ -1,10 +1,10 @@
 ﻿<Page
-    x:Class="AutoHelpMe_V2.Views.Pages.SettingsPage"
+    x:Class="AutoHelpMe.Views.Pages.SettingsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:helpers="clr-namespace:AutoHelpMe_V2.Helpers"
-    xmlns:local="clr-namespace:AutoHelpMe_V2.Views.Pages"
+    xmlns:helpers="clr-namespace:AutoHelpMe.Helpers"
+    xmlns:local="clr-namespace:AutoHelpMe.Views.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     Title="SettingsPage"
@@ -45,7 +45,7 @@
             Margin="0,24,0,0"
             FontSize="20"
             FontWeight="Medium"
-            Text="About AutoHelpMe_V2" />
+            Text="About AutoHelpMe" />
         <TextBlock Margin="0,12,0,0" Text="{Binding ViewModel.AppVersion, Mode=OneWay}" />
     </StackPanel>
 </Page>
