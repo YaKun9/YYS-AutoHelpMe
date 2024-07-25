@@ -23,7 +23,7 @@
 
         <TextBlock Text="Make Onmyoji Great Again" HorizontalAlignment="Center" FontSize="16" Margin='0 0 0 5' Grid.Row="0" />
 
-        <TabControl Grid.Row="1">
+        <TabControl Grid.Row="1" MaxHeight="560">
             <TabItem MaxWidth="100">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -36,8 +36,8 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="75*" />
-                        <ColumnDefinition Width="25*" />
+                        <ColumnDefinition Width="70*" />
+                        <ColumnDefinition Width="30*" />
                     </Grid.ColumnDefinitions>
 
                     <!-- 功能区 -->
@@ -45,16 +45,15 @@
                         <TextBlock Text="功能 1" Margin="0,0,0,10" />
                         <Button Content="按钮 1" Margin="0,0,0,10" Click="ButtonBase_OnClick" />
                         <!-- 你可以添加更多控件 -->
+                        <Image Name="WindowImage" Stretch="UniformToFill"></Image>
                     </StackPanel>
 
                     <!-- 日志区 -->
                     <RichTextBox Name="OnmyojiLogBox"
-                                 Height="500" 
-                                 Grid.Column="1" 
-                                 Margin="10" 
-                                 IsReadOnly="True"  
+                                 Grid.Column="1"
+                                 Margin="10"
+                                 IsReadOnly="True"
                                  FontSize="12"
-                                 Foreground="LightGray"
                                  Background="LightSlateGray"
                                  VerticalScrollBarVisibility="Auto">
                     </RichTextBox>
@@ -64,8 +63,8 @@
             <TabItem MaxWidth="100">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <ui:SymbolIcon Symbol="Home12"></ui:SymbolIcon>
-                        <TextBlock Text="通用2"></TextBlock>
+                        <ui:SymbolIcon Symbol="ClipboardDay24"></ui:SymbolIcon>
+                        <TextBlock Text="日常"></TextBlock>
                     </StackPanel>
                 </TabItem.Header>
                 <Grid>
