@@ -1,12 +1,11 @@
 ﻿<Page
     x:Class="AutoHelpMe.Views.Pages.OnmyojiPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:helpers="clr-namespace:AutoHelpMe.Helpers"
-    xmlns:local="clr-namespace:AutoHelpMe.Views.Pages"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:AutoHelpMe.Views.Pages"
     Title="OnmyojiPage"
     d:DataContext="{d:DesignInstance local:OnmyojiPage,IsDesignTimeCreatable=False}"
     d:DesignHeight="450"
@@ -15,67 +14,97 @@
     ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     mc:Ignorable="d">
-    <Page.Resources>
-        <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
-    </Page.Resources>
 
     <Grid>
-        <StackPanel>
-            <TextBlock Text="Make Onmyoji Great Again" HorizontalAlignment="Center" FontSize="16" Margin='0 0 0 5'></TextBlock>
-            <TabControl BorderThickness="1" BorderBrush="Black">
-                <TabControl.Resources>
-                  
-                    <!-- 未选中状态的 HeaderTemplate -->
-                    <DataTemplate x:Key="TabItemHeaderTemplate">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding}" />
-                        </StackPanel>
-                    </DataTemplate>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-                    <!-- 选中状态的 HeaderTemplate -->
-                    <DataTemplate x:Key="SelectedTabItemHeaderTemplate">
-                        <StackPanel Orientation="Horizontal" >
-                            <TextBlock Text="{Binding}" />
-                            <ui:SymbolIcon Symbol="CheckboxChecked16"></ui:SymbolIcon>
-                        </StackPanel>
-                    </DataTemplate>
-                </TabControl.Resources>
-                <!-- 使用样式控制 TabItem 的外观 -->
-                <TabControl.ItemContainerStyle>
-                    <Style TargetType="TabItem">
-                        <Setter Property="HeaderTemplate" Value="{StaticResource TabItemHeaderTemplate}" />
-                        <Style.Triggers>
-                            <!-- 当 TabItem 被选中时，应用 SelectedTabItemHeaderTemplate -->
-                            <Trigger Property="IsSelected" Value="True">
-                                <Setter Property="HeaderTemplate" Value="{StaticResource SelectedTabItemHeaderTemplate}" />
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </TabControl.ItemContainerStyle>
-                <TabItem Header="总览">
-                    <Grid>
-                        <Label Content="呦呦"></Label>
-                    </Grid>
-                </TabItem>
-                <TabItem Header="通用">
-                    <Grid />
-                </TabItem>
-                <TabItem Header="其他1">
-                    <Grid />
-                </TabItem>
-                <TabItem Header="其他2">
-                    <Grid />
-                </TabItem>
-                <TabItem Header="其他3">
-                    <Grid />
-                </TabItem>
-                <TabItem Header="其他4">
-                    <Grid />
-                </TabItem>
-                <TabItem Header="其他5">
-                    <Grid />
-                </TabItem>
-            </TabControl>
-        </StackPanel>
+        <TextBlock Text="Make Onmyoji Great Again" HorizontalAlignment="Center" FontSize="16" Margin='0 0 0 5' Grid.Row="0" />
+
+        <TabControl Grid.Row="1">
+            <TabItem MaxWidth="100">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="Home24"></ui:SymbolIcon>
+                        <TextBlock Text="通用"></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75*" />
+                        <ColumnDefinition Width="25*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 功能区 -->
+                    <StackPanel Grid.Column="0" Margin="10">
+                        <TextBlock Text="功能 1" Margin="0,0,0,10" />
+                        <Button Content="按钮 1" Margin="0,0,0,10" Click="ButtonBase_OnClick" />
+                        <!-- 你可以添加更多控件 -->
+                    </StackPanel>
+
+                    <!-- 日志区 -->
+                    <RichTextBox Name="OnmyojiLogBox"
+                                 Height="500" 
+                                 Grid.Column="1" 
+                                 Margin="10" 
+                                 IsReadOnly="True"  
+                                 FontSize="12"
+                                 Foreground="LightGray"
+                                 Background="LightSlateGray"
+                                 VerticalScrollBarVisibility="Auto">
+                    </RichTextBox>
+                </Grid>
+            </TabItem>
+
+            <TabItem MaxWidth="100">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="Home12"></ui:SymbolIcon>
+                        <TextBlock Text="通用2"></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <TextBlock Text="2"></TextBlock>
+                </Grid>
+            </TabItem>
+            <TabItem MaxWidth="100">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="Games16"></ui:SymbolIcon>
+                        <TextBlock Text="通用3"></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <TextBlock Text="3"></TextBlock>
+                </Grid>
+            </TabItem>
+            <TabItem MaxWidth="100">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="XboxController24"></ui:SymbolIcon>
+                        <TextBlock Text="通用4"></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <TextBlock Text="4"></TextBlock>
+                </Grid>
+            </TabItem>
+            <TabItem MaxWidth="100">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="XboxConsole20"></ui:SymbolIcon>
+                        <TextBlock Text="通用5"></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <TextBlock Text="5"></TextBlock>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>

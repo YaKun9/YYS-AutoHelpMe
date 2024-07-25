@@ -12,6 +12,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Threading;
 using Wpf.Ui;
+using Wpf.Ui.Controls;
 using DashboardViewModel = AutoHelpMe.ViewModels.Pages.DashboardViewModel;
 
 namespace AutoHelpMe
@@ -41,12 +42,13 @@ namespace AutoHelpMe
                     .MinimumLevel.Debug()
                     .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                     .MinimumLevel.Override("Microsoft.Hosting.Lifetime", LogEventLevel.Warning);
+              
+
+                //输出到RichTextBox
+                loggerConfiguration.WriteTo.RichTextBox(richTextBox, LogEventLevel.Information, outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");
+
                 Log.Logger = loggerConfiguration.CreateLogger();
                 services.AddLogging(c => c.AddSerilog());
-
-                //todo 输出到RichTextBox
-                //loggerConfiguration.WriteTo.RichTextBox(richTextBox, LogEventLevel.Information, outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");
-
                 #endregion Serilog
 
                 services.AddHostedService<ApplicationHostService>();
