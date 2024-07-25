@@ -81,8 +81,6 @@ namespace AutoHelpMe
 
                 services.AddSingleton<OnmyojiPage>();
                 services.AddSingleton<OnmyojiViewModel>();
-
-                services.AddSingleton<ChatGPTPage>();
             }).Build();
 
         /// <summary>
