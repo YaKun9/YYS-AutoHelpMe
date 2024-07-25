@@ -15,7 +15,9 @@ namespace AutoHelpMe.Views.Pages
         /// <summary>
         /// 是否初始化完成
         /// </summary>
-        private static bool _isInitializationComplete;
+        private static bool _isInitialized;
+
+        public OnmyojiViewModel ViewModel { get; }
 
         public OnmyojiPage(OnmyojiViewModel viewModel)
         {
@@ -28,29 +30,33 @@ namespace AutoHelpMe.Views.Pages
 
         private void OnmyojiPage_Loaded(object sender, RoutedEventArgs e)
         {
-            if (!_isInitializationComplete)
+            if (!_isInitialized)
             {
                 var richTextBox = App.GetService<IRichTextBox>();
                 if (richTextBox != null)
                 {
                     richTextBox.RichTextBox = OnmyojiLogBox;
                 }
-
                 Log.Warning("Make Onmyoji Great Again！！！");
             }
 
-            _isInitializationComplete = true;
+            _isInitialized = true;
         }
 
-        public OnmyojiViewModel ViewModel { get; }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// 选择窗体按钮点击事件
+        /// </summary>
+        private async void ChooseWindowButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var win = WinApiHelper.GetWindowHandleByTitle("企业微信");
-            var bitMap = WinApiHelper.CaptureWindow(win).ConvertBitmapToBitmapSource();
-
-            WindowImage.Source = bitMap;
-            Log.Warning("Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！Make Onmyoji Great Again！！！");
+            await LogHelper.InformationAsync("等待按下鼠标中键(滚轮)来选择一个窗口...");
+            var hWnd = await WinApiHelper.GetWindowHandleOnMiddleClickAsync();
+            if (!hWnd.IsNull)
+            {
+                ChooseWindowButton.Content = "已选定窗口";
+                ChooseWindowButton.Icon = new SymbolIcon(SymbolRegular.CalendarLock24);
+                ChooseWindowButton.ToolTip = $"当前已选定窗口【{hWnd.GetWindowTitle()}】，点击可重新选择";
+                Log.Information($"当前已选定窗口【{hWnd.GetWindowTitle()}】，点击可重新选择");
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -8,6 +8,7 @@
     <UseWPF>true</UseWPF>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>083666b5-6329-4d76-86a3-40a0217d9029</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +17,9 @@
 
   <ItemGroup>
     <PackageReference Include="SageTools" Version="2.0.1" />
-    <PackageReference Include="WPF-UI" Version="3.0.4" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="2.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.7" />
+    <PackageReference Include="WPF-UI" Version="3.0.5" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0 " />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2 " />
     <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
@@ -35,6 +38,15 @@
   <ItemGroup>
     <Resource Include="Assets\wpfui-icon-256.png" />
     <Resource Include="Assets\wpfui-icon-1024.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\big.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

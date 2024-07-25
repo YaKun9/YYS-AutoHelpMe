@@ -7,14 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
-using Serilog.Sinks.RichTextBox;
 using Serilog.Sinks.RichTextBox.Abstraction;
 using System.IO;
 using System.Reflection;
-using System.Windows.Media;
 using System.Windows.Threading;
 using Wpf.Ui;
-using Wpf.Ui.Controls;
 using DashboardViewModel = AutoHelpMe.ViewModels.Pages.DashboardViewModel;
 
 namespace AutoHelpMe
@@ -36,22 +33,25 @@ namespace AutoHelpMe
             {
                 #region Serilog
 
-             
+                //输出到RichTextBox
+                var richTextBox = new RichTextBoxImpl();
 
+                services.AddSingleton<IRichTextBox>(richTextBox);
+
+                var minLevel = LogEventLevel.Information;
+#if DEBUG
+                minLevel = LogEventLevel.Debug;
+#endif
                 var loggerConfiguration = new LoggerConfiguration()
-                    .WriteTo.File("logs/auto-help-me.log", outputTemplate: "[{Timestamp:HH:mm:ss.fff}] [{Level:u3}] {SourceContext}{NewLine}{Message}{NewLine}{Exception}{NewLine}", rollingInterval: RollingInterval.Day)
+                    .WriteTo.Async(a => a.File("logs/auto-help-me.log",rollingInterval: RollingInterval.Day))
+                    .WriteTo.Async(a => a.RichTextBox(richTextBox, minLevel))
                     .MinimumLevel.Debug()
                     .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                     .MinimumLevel.Override("Microsoft.Hosting.Lifetime", LogEventLevel.Warning);
-                //输出到RichTextBox
-                var richTextBox = new RichTextBoxImpl();
-                
-                services.AddSingleton<IRichTextBox>(richTextBox);
-              
-                loggerConfiguration.WriteTo.RichTextBox(richTextBox, LogEventLevel.Information, outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");
 
                 Log.Logger = loggerConfiguration.CreateLogger();
                 services.AddLogging(c => c.AddSerilog());
+
                 #endregion Serilog
 
                 services.AddHostedService<ApplicationHostService>();

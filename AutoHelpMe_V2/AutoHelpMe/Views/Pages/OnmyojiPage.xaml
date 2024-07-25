@@ -42,8 +42,7 @@
 
                     <!-- 功能区 -->
                     <StackPanel Grid.Column="0" Margin="10">
-                        <TextBlock Text="功能 1" Margin="0,0,0,10" />
-                        <Button Content="按钮 1" Margin="0,0,0,10" Click="ButtonBase_OnClick" />
+                        <ui:Button Name="ChooseWindowButton" Content="点击选择窗口" ToolTip="点击选择窗口,然后在目标窗口上按下鼠标中键(滚轮)" Margin="0,0,0,10" Click="ChooseWindowButton_OnClick"  Icon="{ui:SymbolIcon LockOpen24}" />
                         <!-- 你可以添加更多控件 -->
                         <Image Name="WindowImage" Stretch="UniformToFill"></Image>
                     </StackPanel>
