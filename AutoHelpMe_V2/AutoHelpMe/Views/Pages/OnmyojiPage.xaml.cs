@@ -37,7 +37,7 @@ namespace AutoHelpMe.Views.Pages
                 {
                     richTextBox.RichTextBox = OnmyojiLogBox;
                 }
-                Log.Warning("Make Onmyoji Great Again！！！");
+                LogHelper.Warning("Make Onmyoji Great Again！！！");
             }
 
             _isInitialized = true;
@@ -55,7 +55,11 @@ namespace AutoHelpMe.Views.Pages
                 ChooseWindowButton.Content = "已选定窗口";
                 ChooseWindowButton.Icon = new SymbolIcon(SymbolRegular.CalendarLock24);
                 ChooseWindowButton.ToolTip = $"当前已选定窗口【{hWnd.GetWindowTitle()}】，点击可重新选择";
-                Log.Information($"当前已选定窗口【{hWnd.GetWindowTitle()}】，点击可重新选择");
+                await LogHelper.InformationAsync($"当前已选定窗口【{hWnd.GetWindowTitle()}】，点击可重新选择");
+            }
+            else
+            {
+                await LogHelper.InformationAsync("选定的窗口无效，请重新选定");
             }
         }
     }
