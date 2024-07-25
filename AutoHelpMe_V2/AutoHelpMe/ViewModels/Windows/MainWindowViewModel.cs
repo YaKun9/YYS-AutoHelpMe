@@ -45,9 +45,9 @@ namespace AutoHelpMe.ViewModels.Windows
             },
             new NavigationViewItem()
             {
-                Content = "菜单5",
-                Icon = new SymbolIcon { Symbol = SymbolRegular.DataHistogram24 },
-                TargetPageType = typeof(Views.Pages.DataPage)
+                Content = "ChatGPT",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.Bot24 },
+                TargetPageType = typeof(Views.Pages.ChatGPTPage)
             },
         ];
 
