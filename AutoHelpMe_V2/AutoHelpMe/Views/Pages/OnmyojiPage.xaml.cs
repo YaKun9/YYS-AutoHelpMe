@@ -37,6 +37,7 @@ namespace AutoHelpMe.Views.Pages
                 {
                     richTextBox.RichTextBox = OnmyojiLogBox;
                 }
+
                 LogHelper.Warning("Make Onmyoji Great Again！！！");
             }
 
